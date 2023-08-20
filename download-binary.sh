@@ -19,15 +19,9 @@ echo ============================================================
 cat result.txt
 echo ============================================================
 
-#  try{
-#     sh "docker rm -f clamav "
-# } catch(Exception e) {
-#     echo "Error al eliminar el contenedor clamav: $e"
-# }
+docker rm -f clamav
+docker volume rm nombre-volumen
 
-# try{
-#     sh "docker volume rm nombre-volumen"
-# } catch(Exception e) {
-#     echo "Error al eliminar el volumen: $e"
-# }
-
+cd ..
+cd ..
+rm -rf download-models 2>/dev/null
