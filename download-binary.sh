@@ -9,11 +9,7 @@ rm -rf data 2>/dev/null
 #     echo "Error al eliminar el contenedor clamav: $e"
 # }
 
-try{
-    sh "docker volume rm nombre-volumen"
-} catch(Exception e) {
-    echo "Error al eliminar el volumen: $e"
-}
+docker volume rm nombre-volumen
 
 cd data
 curl --remote-name $1
