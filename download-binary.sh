@@ -1,21 +1,13 @@
 #!/bin/bash
 
 rm -rf data 2>/dev/null
+docker rm -f clamav 2>/dev/null
+docker volume rm clamav-volumen 2>/dev/null
+
 mkdir data
-
-
-# try{
-#     sh "docker rm -f clamav "
-# } catch(Exception e) {
-#     echo "Error al eliminar el contenedor clamav: $e"
-# }
-
-docker volume rm nombre-volumen
-
 cd data
 curl --remote-name $1
 
-# sh "echo 'datos del modelo'>datos.dat"
 chmod -R a+r .
 # sh "chmod -R a+r \$(pwd)/datos.dat"
 docker volume create clamav-volumen
