@@ -17,6 +17,6 @@ while IFS= read -r linea; do
     # Realiza aquí la acción que desees con la línea
     echo "Línea leída: $linea"
     curl --remote-name $linea
-done < "$archivo"
+done < "../$archivo"
 
 cd ..
