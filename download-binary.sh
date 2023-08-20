@@ -16,18 +16,17 @@ docker volume create clamav-volumen
 docker run --name clamav -d -v clamav-volumen:/data clamav/clamav
 docker cp * clamav:/data
 rm * -rf
-# docker exec clamav clamscan -r /data >result.txt
-# echo ============================================================
-# cat result.txt
-# echo ============================================================
+docker exec clamav clamscan -r /data >result.txt
+echo ============================================================
+cat result.txt
+echo ============================================================
 
-# docker rm -f clamav
-# docker volume rm clamav-volumen
+docker rm -f clamav
+docker volume rm clamav-volumen
 
 # see https://docs.docker.com/engine/security/trust/
-# export DOCKER_CONTENT_TRUST=0
+export DOCKER_CONTENT_TRUST=0
 
-# cd ..
-# cd ..
-# rm -rf download-models 2>/dev/null
-
+cd ..
+cd ..
+rm -rf download-models 2>/dev/null
