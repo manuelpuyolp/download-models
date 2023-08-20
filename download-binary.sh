@@ -9,7 +9,7 @@ cd data
 curl --remote-name $1
 
 # see https://docs.docker.com/engine/security/trust/
-export DOCKER_CONTENT_TRUST=1
+export DOCKER_CONTENT_TRUST=0
 
 chmod -R a+r .
 docker volume create clamav-volumen
