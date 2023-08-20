@@ -9,5 +9,9 @@ chmod -R a+r .
 chmod -R a+r ./donwlod-pieces.sh
 chmod +x    ./donwlod-pieces.sh
 
-./donwlod-pieces.sh $Ficheros
+# ./donwlod-pieces.sh $Ficheros
 
+echo $Ficheros >datos.dat
+echo -------------------------------------------
+ls -la 
+cat datos.dat
