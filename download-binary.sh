@@ -13,10 +13,11 @@ chmod -R a+r .
 docker volume create clamav-volumen
 docker run --name clamav -d -v clamav-volumen:/data clamav/clamav
 docker cp * clamav:/data
-# sh "docker exec clamav clamscan -r /data >result.txt"
-# sh "echo ============================================================"
-# sh "cat result.txt"
-# sh "echo ============================================================"
+rm * -rf
+docker exec clamav clamscan -r /data >result.txt
+echo ============================================================
+cat result.txt
+echo ============================================================
 
 #  try{
 #     sh "docker rm -f clamav "
