@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm -rf data 2>/dev/null
+
 docker rm -f clamav 2>/dev/null
 docker volume rm clamav-volumen 2>/dev/null
 
